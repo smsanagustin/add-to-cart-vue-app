@@ -1,0 +1,255 @@
+body {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+#header {
+    background-color: #8294C4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.space-left {
+    margin-left: 20px;
+}
+
+#cart {
+    margin-top: 35px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#cart span {
+    font-size: 15px;
+}
+
+#cart-logo {
+    height: 27px;
+    margin-right: 5px;
+}
+
+.row {
+    display: flex;
+    flex: row;
+}
+
+.search-container {
+    float: right;
+}
+
+.search-container input {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: 1px solid grey;
+}
+
+.search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #ccc;
+}
+
+.listings {
+    margin: 30px 150px 0px;
+    padding-left: 0px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.centered {
+    display: flex;
+    margin-right: 0px;
+    justify-content: center;
+}
+
+.listing-item {
+    margin-bottom: 20px;
+    height: 420px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+
+.book-details {
+    max-width: 300px;
+}
+
+.book-details-limit {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.book-poster {
+    height: 280px;
+}
+
+.price-section {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    font-size: 18px;
+}
+
+.add-to-cart {
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 270px;
+}
+
+.floatingCartWindow {
+    position: relative;
+    height: 550px;
+    width: 290px;
+    border-radius: 10px;
+    padding: 28px 35px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+}
+
+.cart-item-details {
+    font-size: 17px;
+}
+
+.book-title {
+    overflow-y: auto;
+    max-height: 80px;
+    width: 130px;
+    position: relative;
+    /* border: 1px solid black; */
+    word-wrap: break-word;
+    margin-bottom: 7px;
+}
+
+.book-price-text {
+    margin-bottom: 7px;
+}
+
+.item-on-cart {
+    margin-top: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.book-poster-section {
+    height: 140px;
+    min-width: 110px;
+    border: 2px solid rgb(205, 205, 205);
+    margin-right: 20px;
+}
+
+.book-poster-img-div {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-poster-on-cart {
+    height: 130px;
+    width: 80px;
+}
+
+.greyed-text {
+    color: gray;
+}
+
+.checkout-section {
+    position: absolute;
+    bottom: 30px;
+    margin-top: 20px;
+}
+
+.checkout-button {
+    height: 40px;
+    width: 270px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #8294C4;
+    color: white;
+    border-radius: 5px;
+}
+
+.view-shopping-cart:hover {
+    text-decoration: underline;
+}
+
+.cart-window-div {
+    position: absolute;
+    top: 80px;
+    background-color: white;
+    right: 20px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+.back-button-img {
+    height: 30px;
+}
+
+.scrollable {
+    overflow-y: auto;
+    position: relative;
+    max-height: 380px;
+}
+
+.itemCountSetting {
+
+}
+
+.itemCountSetting button {
+    display: flex;
+    flex: row;
+    align-items: center;
+    height: 25px;
+    background-color: white;
+    border: 1px solid #ccc ;
+}
+
+.home-button {
+    border: none;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    margin-left: 90px;
+    font-size: 15px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.home-button:hover {
+    background-color: #8294C4;
+    color: white;
+}
+
+.featured-books-label {
+    margin-top: 90px;
+    margin-left: 90px;
+}

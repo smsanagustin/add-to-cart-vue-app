@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- search button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1 class="space-left">RSR</h1>
+            <h4>read. sleep. repeat</h4>
+            <div id="cart" class="row"> 
+              <img @click="toggleShowCart" id="cart-logo" src="assets/cart.png">
+              <span>{{ getNumberOfItemsOnCart }}</span>
+            </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="search-container">
+            <input type="text" class="search-query" placeholder="Search.." name="search" v-model="searchInput">
+            <button @click="searchBook(searchInput)"><i class="fa fa-search"></i></button>
+        </div>
+
+        <!-- books you might like -->
+        <div>
+            <h2 class="space-left featured-books-label" v-if="showFeaturedBooks">Books you might like: </h2>
+            <button @click="goHome" v-if="showHomeButton" class="home-button">Go home</button>
+            <ul class="listings">
+                <li class="listing-item" v-for="book in filteredListings">
+                    <div class="centered">
+                        <img class="book-poster" :src="book.img_src">
+                    </div><br>
+                    <div class="book-details">
+                        <p class="book-details-limit">
+                            <b>{{ book.title }} - {{ book.author }}</b>
+                        </p>
+                    </div>
+                    
+                    <div class="price-section">
+                        <span class="price">{{ book.price }}</span>
+                        <img @click="addToCart(book)" class="add-to-cart" src="assets/cart-black.png">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- cart -->
+        <div v-if="showCart" class="cart-window-div">
+            <div class="floatingCartWindow">
+                <div class="back-button">
+                    <img @click="toggleShowCart" class="back-button-img" src="assets/back-button.png">
+                </div>
+                <!-- books section -->
+                <div class="scrollable">
+                    <!-- div for each book -->
+                    <div v-for="book in booksOnCart">
+                        <div class="row item-on-cart">
+                            <div class="book-poster-section">
+                                <div class="book-poster-img-div">   
+                                    <img class="book-poster-on-cart" :src="book.img_src">
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="book-title">
+                                    <span><b>{{ book.title }}</b></span><br>
+                                </div>
+                                <div class="book-price-text">
+                                    <span class="greyed-text">{{ book.price }}</span>
+                                </div>
+                                <div class="centered row itemCountSetting">
+                                    <button @click="decreaseQuantity(book)">-</button>
+                                    <button>{{ book.quantity }}</button>
+                                    <button @click="increaseQuantity(book)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <!-- checkout section -->
+                <div class="checkout-section centered">
+                    <div> 
+                        <button class="checkout-button">Checkout</button>
+                        <a class="view-shopping-cart centered">View shopping bag</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
